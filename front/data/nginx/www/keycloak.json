@@ -1,5 +1,5 @@
 {
-    "realm": "sandbox",
+    "realm": "c",
     "auth-server-url": "https://sso.dorinbotan.com/auth",
     "ssl-required": "external",
     "resource": "web-client",
