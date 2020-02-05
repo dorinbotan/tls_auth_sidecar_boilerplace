@@ -1,0 +1,1 @@
+- Change front build script to place built files in ../data/nginx/www
