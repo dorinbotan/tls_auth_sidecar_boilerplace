@@ -1,0 +1,18 @@
+{
+  "name": "front",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build_js; npm run build_css; npm run build_html",
+    "build_js": "browserify -o build/bundle.js src/index.js",
+    "build_css": "cp style.css build/",
+    "build_html": "cp index.html build/",
+    "clean": "rm -rf build"
+  },
+  "author": "Dorin Botan",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "browserify": "^16.5.0"
+  }
+}
