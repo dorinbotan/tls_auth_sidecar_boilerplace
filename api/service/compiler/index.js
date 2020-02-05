@@ -11,7 +11,7 @@ const image = 'tmp';
 function runContainer(image, user) {
     if (!image || !user) return;
 
-    var child = spawn('docker', ['run', '--rm', '-t', '-v', `${process.env.PWD}/users/${user}/${proj}:/root/src`, `${image}` ]);
+    var child = spawn('docker', [ 'run', '--rm', '-t', '-v', `${process.env.PWD}/users/${user}/${proj}:/root/src`, `${image}` ]);
     // var child = spawn('docker', [ 'run', '--rm', '-t', '-v', '/home/dbotan/tmp/c/src:/root/src', '--name', `${user}`, `${image}` ]);
 
     child.stdout.setEncoding('utf8');

@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+    "access_token access_token access_token access_token refresh_token refresh_token refresh_token refresh_token id_token id_token id_token id_token"
+    "login_btn login_btn login_btn logout_btn logout_btn logout_btn request_public_btn request_public_btn request_public_btn request_protected_btn request_protected_btn request_protected_btn"
+    "request_result request_result request_result request_result request_result request_result request_result request_result request_result request_result request_result request_result";
+    grid-template-rows: 20fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#request_result_container {
+    grid-area: request_result;
+    margin: auto;
+}
+
+.token_header {
+    padding: 8px;
+    font-weight: bold;
+}
+
+#access_token_container {
+    grid-area: access_token;
+}
+
+#refresh_token_container {
+    grid-area: refresh_token;
+}
+
+#id_token_container {
+    grid-area: id_token;
+}
+
+#login_btn {
+    grid-area: login_btn;
+    background: steelblue;
+    text-align: center;
+    cursor: pointer;
+    line-height: 10vh;
+}
+
+#logout_btn {
+    grid-area: logout_btn;
+    background: crimson;
+    text-align: center;
+    cursor: pointer;
+    line-height: 10vh;
+}
+
+#request_public_btn {
+    grid-area: request_public_btn;
+    background: teal;
+    text-align: center;
+    cursor: pointer;
+    line-height: 10vh;
+}
+
+#request_protected_btn {
+    grid-area: request_protected_btn;
+    background: darkgoldenrod;
+    text-align: center;
+    cursor: pointer;
+    line-height: 10vh;
+}
+
+@media (max-width: 1270px) {
+    body {
+        grid-template-areas:
+        "access_token"
+        "refresh_token"
+        "id_token"
+        "login_btn"
+        "logout_btn"
+        "request_public_btn"
+        "request_public_btn"
+        "request_protected_btn"
+        "request_result";
+        grid-template-columns: 1fr;
+    }
+}

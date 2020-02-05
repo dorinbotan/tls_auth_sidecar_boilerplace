@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="assets/json-viewer.css">
+</head>
+<body>
+    <div id="access_token_container">
+        <div class="token_header" id="access_token_header">Access token:</div>
+        <div id="access_token"></div>
+    </div>
+    <div id="refresh_token_container">
+        <div class="token_header">Refresh token:</div>
+        <div id="refresh_token"></div>
+    </div>
+    <div id="id_token_container">
+        <div class="token_header">ID token:</div>
+        <div id="id_token"></div>
+    </div>
+
+    <div id="login_btn">Log in</div>
+    <div id="logout_btn">Log out</div>
+    <div id="request_public_btn">Request public</div>
+    <div id="request_protected_btn">Request protected</div>
+
+    <div id="request_result_container">
+        <div id="request_result"></div>
+    </div>
+
+    <script type="application/javascript" src="assets/json-viewer.js"></script>
+    <script type="application/javascript" src="https://sso.dorinbotan.com/auth/js/keycloak.js"></script>
+    <script type="application/javascript" src="index.js"></script>
+</body>
+</html>

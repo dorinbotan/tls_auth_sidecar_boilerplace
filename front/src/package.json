@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build_js; npm run build_css; npm run build_html",
-    "build_js": "browserify -o build/bundle.js src/index.js",
+    "build_js": "browserify -o build/bundle.js js/index.js",
     "build_css": "cp style.css build/",
     "build_html": "cp index.html build/",
     "clean": "rm -rf build"
