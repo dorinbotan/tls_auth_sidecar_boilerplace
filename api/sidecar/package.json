@@ -1,0 +1,14 @@
+{
+  "name": "sidecar",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Dorin Botan",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "http-proxy": "^1.18.0",
+    "keycloak-connect": "^7.0.0"
+  }
+}

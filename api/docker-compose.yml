@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  resource:
+    container_name: resource
+    build: 
+      context: ./service
+    restart: unless-stopped
+    networks:
+      - inner_network
+
+  sidecar:
+    container_name: sidecar
+    build: 
+      context: ./sidecar
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+    networks:
+      - inner_network
+
+  nginx:
+    image: nginx:1.15-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/nginx/conf:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./data/nginx/conf:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+networks:
+  inner_network:
